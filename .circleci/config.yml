@@ -15,7 +15,7 @@ jobs:
     steps:      
       - run: 
           name: "output hello world to a file called output.txt"
-          command: echo hello world > ~/output.txt
+          command: echo "hello world" > ~/output.txt
       - persit_to_workspace:
           root: ~/
           paths: 
