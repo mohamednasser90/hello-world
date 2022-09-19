@@ -13,9 +13,9 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:      
-      - run: 
-          name: "output hello world to a file called output.txt"
-          command: echo "hello world" > ~/output.txt
+      - run: echo "hello world" > ~/output.txt
+          #name: "output hello world to a file called output.txt"
+          #command: echo "hello world" > ~/output.txt
       - persit_to_workspace:
           root: ~/
           paths: 
