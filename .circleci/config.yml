@@ -5,7 +5,7 @@ commands:
   print_pipeline_id:
     description: "print hello using command for reusable code"
     parameters:
-      to:
+      id:
         type: string
         default: "hello world"
     steps:
@@ -21,7 +21,8 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id:
-          to: <<pipeline.id>> 
+          #to: <<pipeline.id>> 
+          id:  ${CIRCLE_WORKFLOW_ID}
           
 
   save_hello_world_output:
