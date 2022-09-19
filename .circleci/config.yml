@@ -24,7 +24,7 @@ jobs:
 
      
 
-  printoutput_file:
+  print_output_file:
     docker:
       - image: circleci/node:13.8.0
     steps:
@@ -40,6 +40,6 @@ workflows:
   sharinginfo_workflow:
     jobs:
       - save_hello_world_output
-      - printoutput_file:
+      - print_output_file:
           requires:            
             - save_hello_world_output
