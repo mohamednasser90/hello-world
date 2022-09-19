@@ -24,10 +24,10 @@ jobs:
     print_output_file:
       docker:
         - image: circleci/node:13.8.0
-      steps:  
+      steps:
         - attach_workspace:
-            at: ~/            
-        - run: cat ~/output.txt   
+          at: ~/
+        - run: cat ~/output.txt
 
 
 # Invoke jobs via workflows
