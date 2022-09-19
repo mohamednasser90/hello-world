@@ -9,7 +9,7 @@ commands:
         type: string
         default: "hello world"
     steps:
-      - run: echo <<parameters.to>> 
+      - run: echo <<parameters.id>> 
       
 
 
