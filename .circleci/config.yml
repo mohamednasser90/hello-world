@@ -12,10 +12,21 @@ commands:
       - run: echo <<parameters.id>> 
       
 
-
+# Job Failures
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
+  my_job:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: exit 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
+          
+
   printhello:
     docker:
       - image: circleci/node:13.8.0
@@ -55,6 +66,7 @@ jobs:
 workflows:
   sharinginfo_workflow:
     jobs:
+      - my_job
       - printhello
       - save_hello_world_output
       - printoutput_file:
